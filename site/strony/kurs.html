@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kurs na curserze</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="../css/kurs.css">
+    <title>Kurs na curserze</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/kurs.css">
 </head>
 <body>
-<header>
-	Nagłówek
-	<nav>Nawigacja
-	<a href="#section1">Sekcja 1</a>
-	<a href="#section2">Sekcja 2</a>
-	</nav>
-</header>
-<h1>Główny tytuł</h1>
-<section id="section1">Sekcja 1
+    <header class="container-fluid">
+        Nagłówek
+	<nav class="row">
+        
+	<a href="#section1" class="col-md-4">Sekcja 1</a>
+        <a href="#section2" class="col-md-4">Sekcja 2</a>
+         <a href="#section3" class="col-md-4">Sekcja 3</a>
+    </nav>
+    </header>
+    <h1 class="jumbotron">Główny tytuł</h1>
+    <div class="row">
+        <section id="section1">
+            Sekcja 1
 
 
-<article>Artykuł 1
-<ul>
-	<li>Mleko</li>
-	<li>Ciasteczka</li>
-	<ul>
-		<li>Czekoladowe</li>
-	</ul>
-</ul></article>
-<article>&quot;Artykuł 2&quot;
+            <article class="col-lg-6 col-md-6">
+                Artykuł 1
+                <ul>
+                    <li>Mleko</li>
+                    <li>Ciasteczka</li>
+                    <ul>
+                        <li>Czekoladowe</li>
+                    </ul>
+                </ul>
+            </article>
+            <article class="col-lg-6 col-md-6">
+                &quot;Artykuł 2&quot;
 Przenoszenie na następną karte
-<a href="http://google.pl" target="_blank">Google</a>
-</article>
-</section>
-<section id="section2">Sekcja 2
-<article>Article 1
-<img src="../images/tobi.jpg" alt="Tobi" height="200" width="140"></article>
-<article>Article 2</article>
-</section>
-<aside>Informacje dotyczące głównego tematu</aside>
-<footer>Stopka &copy;</footer>
+                <a href="http://google.pl" target="_blank">Google</a>
+            </article>
+        </section>
+        <section id="section2">
+            Sekcja 2
+            <article class="col-lg-6 col-md-6">
+                Article 1
+                <img src="../images/tobi.jpg" alt="Tobi" height="200" width="140">
+            </article>
+            <article class="col-lg-6 col-md-6" id="box">
+                Article 2
+                <div id="content">Content</div>
+            </article>
+        </section>
+        <section id="section3">
+            Sekcja 3
+
+
+            <article class="col-lg-6 col-md-6">
+                <div id="frame">
+                    <div id="ground"></div>
+                    <div id="pine"></div>
+                    <div id="leaves"></div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <aside>Informacje dotyczące głównego tematu</aside>
+    <footer>Stopka &copy;</footer>
+    <script src="../js/jquery.js"></script>
+    <script src="../bootstrap-3.3.7-dist/css/bootstrap.min.js"></script>
 </body>
 </html>
