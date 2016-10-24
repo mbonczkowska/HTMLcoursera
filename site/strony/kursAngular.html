@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myFirstApp">
+<head>
+	<title>Kurs Angulara</title>
+</head>
+<body>
+	<h1>Moje imie w ASCII:</h1>
+	<br>
+	<input type="text" id="name">
+	<div id="output"></div>
+
+	<div ng-controller="MyFirstController">{{sayHello()}}
+	<input type="text" ng-model="name">Mozna zmienic ta wartosc w inpucie na: {{name}} 
+	</div>
+
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/angular.js"></script>
+	<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var person ={
+				name: "",
+				occupation: "student"
+			}
+			$("#name").keyup(function(){
+				person.name = $(this).val();
+				var totalASCII = 0;
+				for(var i = 0; i <person.name.length; i++){
+					totalASCII +=  person.name.charCodeAt(i);		
+				}
+				$("#output").html(totalASCII);
+				
+			});
+
+
+		});
+		(function(){
+			'use strict';
+
+			angular.module("myFirstApp", [])
+			.controller("MyFirstController", function($scope){
+				$scope.name = "Madzia";
+				$scope.sayHello = function(){
+					return "Hello";
+				};
+
+			});
+		})();
+
+	</script>
+</body>
+</html>

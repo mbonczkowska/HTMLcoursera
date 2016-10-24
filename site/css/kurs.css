@@ -102,9 +102,7 @@ article{
 }*/
 
 @media(min-width: 700px){
-	.col-lg-6{
-	
-		
+	.col-lg-6{	
 		width: 90%;
 	}
 	section{

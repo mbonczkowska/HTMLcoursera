@@ -16,7 +16,7 @@ body{
 	width: 220px;
 	height: 100px;
 	margin:10px 15px 10px 0;
-	sizes: 70%;
+	size: 70%;
 }
 
 #navbar-toggle .icon-bar{	
@@ -51,8 +51,16 @@ body{
 	color: #61122f;
 }
 
+
+
 #nav-list a:hover{
 	color: #E7E7E7;
+}
+
+#nav-list .active a{
+	
+		background-color:  #C48D03;
+
 }
 
 #phone{
@@ -153,6 +161,64 @@ body{
 
 
 /* Menu */
+
+/*Kategorie */
+
+.menu-item-tile{
+	margin-bottom: 25px;
+}
+
+.menu-item-tile hr{
+	width: 80%;
+}
+
+.menu-item-tile .menu-item-price{
+	font-style: 1.1em;
+	text-align: right;
+	margin-top: -15px;
+	margin-right: -15px;
+
+}
+.menu-item-tile .menu-item-price span{
+	font-size: 0.6em;
+}
+
+.menu-item-photo{
+	position: relative;
+	border: 2px solid #3F0C1F;
+	overflow: hidden;
+	padding: 0;
+	margin: 0 auto 20px -15px;
+	max-width: 250px;
+
+}
+
+.menu-item-photo div{
+	position: absolute;
+	bottom: 0;
+	right:0;
+	width: 80px;
+	height: 100px
+	background-color: #557c3e;
+	text-align: center;
+}
+
+.menu-item-decription{
+	padding-right: 30px;
+	
+}
+
+h3.menu-item-title{
+	margin: 0 0 10px;
+}
+
+.menu-item-details{
+	font-size: .9em;
+	font-style: italic;
+}
+
+
+
 @media (max-width: 767px) { 
 
 	.navbar-brand h1{
@@ -185,7 +251,18 @@ body{
 	.panel-footer section hr{
 		width: 50%;
 	}
+
+	.menu-item-photo{
+		margin-left: auto;
+	}
+	.menu-item-description{
+		text-align: center;
+	}
+	.menu-item-tile .menu-item-price{
+		text-align: center;
+	}
  }
+
 
 
 
