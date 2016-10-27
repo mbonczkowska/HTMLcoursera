@@ -11,6 +11,8 @@
 
 	<div ng-controller="MyFirstController">{{sayHello()}}
 	<input type="text" ng-model="name">Mozna zmienic ta wartosc w inpucie na: {{name}} 
+	<div>{{price |currency:"ZL"}}</div>
+
 	</div>
 
 
@@ -44,6 +46,7 @@
 				$scope.sayHello = function(){
 					return "Hello";
 				};
+				$scope.price = 19;
 
 			});
 		})();
