@@ -2,55 +2,42 @@
 <html ng-app="myFirstApp">
 <head>
 	<title>Kurs Angulara</title>
+	  <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
-	<h1>Moje imie w ASCII:</h1>
-	<br>
-	<input type="text" id="name">
-	<div id="output"></div>
+	<header></header>
+	<div class="container">
+		<h1>Moje imie w ASCII:</h1>
+		<br>
+		<input type="text" id="name">
+		<div id="output"></div>
 
-	<div ng-controller="MyFirstController">{{sayHello()}}
-	<input type="text" ng-model="name">Mozna zmienic ta wartosc w inpucie na: {{name}} 
-	<div>{{price |currency:"ZL"}}</div>
+		<div ng-controller="MyFirstController">{{sayHello()}}
+			<input type="text" ng-model="name">Mozna zmienic ta wartosc w inpucie na: {{name}} 
+			<div>{{price |currency:"ZL"}}</div>
+		</div>
+		
+		<article ng-controller="tvSeries">
+			<div class="container">
+				<h3>{{title}}</h3>
+				<div ng-repeat="product in products">
+					<p class="title">{{product.name}}</p>
+					<p class="price">{{product.price |currency}}</p>
+					<p class="date">{{product.pubdate | date}}</p>
+					<p class="likes" ng-click="plusOne($index)">+ {{ product.likes }} </p>
+				</div>
+			</div>
+		</article>
+		<article ng-controller="nameCalculatorController">
+			<input type="text" ng-model="name" ng-keyup="displayNumeric();">
+			<div>{{totalValue}}</div>
+			<div>{{name}}</div>
+		</article>
 
 	</div>
-
-
+		
 	<script src="../js/jquery.js"></script>
-	<script src="../js/angular.js"></script>
-	<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			var person ={
-				name: "",
-				occupation: "student"
-			}
-			$("#name").keyup(function(){
-				person.name = $(this).val();
-				var totalASCII = 0;
-				for(var i = 0; i <person.name.length; i++){
-					totalASCII +=  person.name.charCodeAt(i);		
-				}
-				$("#output").html(totalASCII);
-				
-			});
-
-
-		});
-		(function(){
-			'use strict';
-
-			angular.module("myFirstApp", [])
-			.controller("MyFirstController", function($scope){
-				$scope.name = "Madzia";
-				$scope.sayHello = function(){
-					return "Hello";
-				};
-				$scope.price = 19;
-
-			});
-		})();
-
-	</script>
+	<script src="../js/angular.js"></script>	
+	<script src="../js/kursAngular.js"></script>
 </body>
 </html>
