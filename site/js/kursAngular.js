@@ -63,8 +63,19 @@
 					}
 					return totalStringValue;
 				}
-			});
-			
+			})
+			//dependency injection 			
+				.controller("DIController", ["$scope","$filter", function($scope, $filter){
+						$scope.name = "Madzia";
+
+				$scope.upper = function(){
+					// zamien liery na duze za pomoca filtra uppercase
+					var upCase = $filter("uppercase");
+					$scope.name = upCase($scope.name);
+				}
+				}]);
+
+			//console.log($injector.annotate(DIController));
 
 		/*	angular.module("myFirstApp", [])
 			.controller("tvSeries",[ "$scope", function($scope){
