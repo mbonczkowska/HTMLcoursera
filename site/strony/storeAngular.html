@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular store</title>
+
+	 <link rel="stylesheet" href="../css/bootstrap.min.css">
+	 <style>
+
+	 	div h2{
+
+	 		color:red;
+	 		transition: transform 5s ease;
+	 		position:absolute;
+			right: 0;
+	 	}
+	 	div h2:hover{
+	 		transform: rotate(360deg);
+	 	}
+
+	 	.form-input + .form-label{
+	 		position: relative;
+
+	 		transform-origin: center left;
+	 		transition: color 0.3s,transform 0.3s;
+	 	}
+	 	.form-input:focus + .form-label{
+	 		color: #333333;
+	 		transform: scale(0.8) translateY(-40px);
+	 	}
+	 	.form-input{
+			position: absolute;
+	 		left:-5px;
+	 	}
+	 	fieldset{
+	 		position: relative;
+	 		margin: 30px;
+	 	}
+	 </style>
+</head>
+<body ng-app="store">
+
+	<header>Super istotna nazwa</header>
+	<article>
+		<form action="" >
+			<fieldset>
+				<input type="text" class="form-input"/>
+				<label class="form-label">Imię</label>
+			</fieldset>
+		</form>
+	</article>
+	<article>
+		<div ng-controller="StoreController as store">
+			<div ng-repeat="product in store.products">
+				<div ng-hide="product.soldOut" ng-repeat="image in product.images">
+
+					<h1>{{product.name}}</h1>
+					<!-- filtr currency -->
+					<h2>{{product.price | currency :"PLN"}} </h2>
+
+					<section ng-controller="PanelController as panel"> <!-- as *** - alias-->
+						<ul class="nav nav-pills" >
+							<li ng-class="{active:panel.isSelected(1)}">
+								<a href="" ng-click="panel.selectTab(1)">Description</a></li>
+							<li ng-class="{active:panel.isSelected(2)}">
+								<a href="" ng-click="panel.selectTab(2)">Specifications</a></li>
+						    <li ng-class="{active:panel.isSelected(3)}">
+						    	<a href="" ng-click="panel.selectTab(3)">Reviews</a></li>				
+						</ul>
+						<div ng-show="panel.isSelected(1)">
+						    
+						    {{product.description}}
+						  </div>
+						  <div ng-show="panel.isSelected(2)">
+						    <h4>Specs</h4>
+						    <blockquote>Shine: {{product.shine}}</blockquote>
+						  </div>
+						  <div ng-show="panel.isSelected(3)">
+						    <h4>Reviews</h4>
+						  </div>
+					</section>
+				   
+					<!--ng directives show, hide-->
+
+				    <button ng-show="product.canPurchase">Kup</button>
+					<img ng-src="{{image.full}}"/>
+
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/angular.js"></script>	
+	<script src="../js/storeAngular.js"></script>
+</body>
+</html>
