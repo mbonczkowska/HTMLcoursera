@@ -1,0 +1,18 @@
+#expression li:nth-child(2n+ 1){
+	color:red;
+}
+
+#not li:not([id*="not"]){ /* atrybut id zawiera slowo not */
+	color:yellow;
+}
+
+#first::first-line{
+	color:magenta;
+}
+
+.example{
+	display: none;
+}
+article{
+	margin-top: 20px;
+}

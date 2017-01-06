@@ -4,8 +4,7 @@
 	<title>Kurs Angulara</title>
 	  <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
-<body>
-	<header></header>
+<body>	<header></header>
 	<div class="container">
 		<h1>Moje imie w ASCII:</h1>
 		<br>
@@ -16,7 +15,7 @@
 			<input type="text" ng-model="name">Mozna zmienic ta wartosc w inpucie na: {{name}} 
 			<div>{{price |currency:"ZL"}}</div>
 		</div>
-		
+	
 		<article ng-controller="tvSeries">
 			<div class="container">
 				<h3>{{title}}</h3>
@@ -37,11 +36,15 @@
 		<article ng-controller="DIController">
 			<input type="text" ng-model="name" ng-blur = "upper();">
 		</article>
+		<article ng-controller="parentController">
+			<h1>{{title}}</h1>
+		</article>
 
 	</div>
 		
 	<script src="../js/jquery.js"></script>
 	<script src="../js/angular.js"></script>	
+
 	<script src="../js/kursAngular.js"></script>
 </body>
 </html>
