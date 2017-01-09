@@ -1,4 +1,4 @@
-	$(document).ready(function(){
+$(document).ready(function(){
 			var person ={
 				name: "",
 				occupation: "student"
@@ -73,7 +73,10 @@
 					var upCase = $filter("uppercase");
 					$scope.name = upCase($scope.name);
 				}
-				}]);
+				}])
+				.controller("parentController",function($scope){
+						$scope.title = "super ważny tytuł"; 
+				});
 
 			//console.log($injector.annotate(DIController));
 
@@ -92,7 +95,6 @@
 				likes:0
 				}
 				];
-
 			$scope.plusOne = function(index){
 				$scope.products[index].likes+=1;
 			}

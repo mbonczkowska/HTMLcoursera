@@ -1,4 +1,27 @@
 (function(){
+
+	// drukuje nazwe atrybutu 
+	//console.log($(".form-input").attr("type"));
+	var person = "Madzia";
+	var person ="Magdalena";
+
+	function whatsMyName(name){
+		return name;
+	}
+
+	console.log(whatsMyName(person));
+
+	var alienApp = {};
+
+	alienApp.person = "Alien";
+
+
+
+	alienApp.whatsMyName = function(name){
+		return name;
+	}
+	console.log(alienApp.whatsMyName(alienApp.person));
+
 	var app = angular.module('store',[]);
 
 	app.controller('StoreController',function(){
