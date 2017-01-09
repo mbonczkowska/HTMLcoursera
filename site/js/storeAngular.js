@@ -29,7 +29,7 @@
 	{
 		name: 'Sprężarka',
 		price: 2000000,
-		destription: 'No sprężarka',
+		description: 'No sprężarka',
 		canPurchase:true,
 		soldOut:false,
 		images:[
