@@ -6,8 +6,19 @@
 	color:yellow;
 }
 
-#first::first-line{
+#firstLine::first-line{
 	color:magenta;
+}
+
+#firstLetter li::first-letter{
+	color:olive;
+}
+
+#after li::after{ /* lub before */
+	color:olive;
+	background: yellow;
+	content: " Zajebiste! "; /* niezbedny */
+	font-size: 1.5em;
 }
 
 .example{
@@ -15,4 +26,34 @@
 }
 article{
 	margin-top: 20px;
+}
+
+#canvas{
+	margin:5em;
+	font-size:20px;
+}
+#canvas div{
+	height: 10em;
+	margin-bottom: 0.5em;
+	background-color: red;
+	border: solid 0.5em black;
+	padding: 1em;
+	text-align: center;
+}
+.width100procent{
+	width: 100%;
+	color: purple;
+	box-sizing: border-box;
+}
+
+#widthAuto div:first-child{
+	width: 40%;
+	margin: 5em auto; /*rem - od szerokosci body */
+}
+
+.inlineB{
+	display: inline-block;
+	margin: 20px;
+	border: 1px solid red;
+	padding: 20px;
 }
