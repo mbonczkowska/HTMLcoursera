@@ -4,5 +4,4 @@
 			$(this).next().toggle("slow");
 	});
 
-	})
-();
+})();
