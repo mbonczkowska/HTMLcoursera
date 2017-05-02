@@ -54,4 +54,55 @@ $(document).ready(function(){
  	$(".getNumber").html(moj["tab"][2]["liczba"]);
 
 
+ 	let name = "Magda";
+
+ 	if(	name === "Magda" || name === "magda"){
+ 		$(".nameMessage").html("Ave ja :3");
+ 	} else if( name === "Grażynka" || name === "grażynka" ){
+ 		$(".nameMessage").html("Mami");
+ 	} else{
+ 		$(".nameMessage").html("Jesteś kimś innym? :O")
+ 	}
+
+ 	let number = 1;
+
+ 	while(number < 10000){
+ 		
+ 		number*=3;
+ 		$(".squere").append(number + " ");
+ 	}
+
+ 	let amazingAnimals = [];
+
+ 	for(let i = 0; i < randomWords.length; i++){
+ 		amazingAnimals[i] = "Niesamowite " + randomWords[i].toLowerCase();
+ 		$(".amazingAnimals").append(amazingAnimals[i] + " ");
+ 	}
+
+ 	const alphabet = "abcdefghijklmnoprstuwvxyz";
+ 	let randomSentence = "";
+ 	let i = 0;
+
+ 	while(i < 6){
+ 		randomSentence += alphabet[Math.floor( Math.random() * alphabet.length)];
+ 		i = randomSentence.length;
+ 	}
+
+ 	$(".randomSentence").html(randomSentence);
+
+ 	var originalString = "Everything is awesome";
+ 	var resultString = "";
+
+ 	for(let i = 0; i < originalString.length; i++){
+ 		if(originalString[i] === "a"){
+ 			resultString += "4";
+ 		} else if(originalString[i] === "o"){
+ 			resultString += "0";
+ 		} else if(originalString[i] === "e"){
+ 			resultString += "3";
+ 		}else{
+ 			resultString += originalString[i];
+ 		}
+ 	}
+ 	$(".hackerSentence").html(resultString);
 });
