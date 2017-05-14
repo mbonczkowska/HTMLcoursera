@@ -105,4 +105,37 @@ $(document).ready(function(){
  		}
  	}
  	$(".hackerSentence").html(resultString);
+
+
+ 	function addNumbers(first, second){
+ 		return first + second;
+ 	};
+ 	function multiplyNumbers(first,second){
+ 		return first * second;
+ 	};
+ 	$(".addNumbers").html(addNumbers(multiplyNumbers(36325,9824),777));
+ 	
+
+ 	var counterNumbers = 0;
+
+ 	function isTheSameTables(first,second) {
+ 		counterNumbers = 0;
+ 		if(first.length === second.length){
+ 			for(var i = 0; i < first.length; i++){
+ 				if(first[i] === second[i]){
+ 					counterNumbers++;
+ 				};
+
+ 			}
+ 			if(counterNumbers === first.length){
+ 					$(".isTheSameTables").html("Tablice są takie same");
+ 			}else{
+ 				$(".isTheSameTables").html("Tablice nie są takie same");
+ 			}
+ 		}else{
+ 			$(".isTheSameTables").html("Tablice nie są tej samej wielkości");
+ 		}
+ 	};
+
+ 	isTheSameTables([1,2],[1,2]);
 });
