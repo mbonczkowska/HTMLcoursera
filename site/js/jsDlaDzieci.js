@@ -138,4 +138,92 @@ $(document).ready(function(){
  	};
 
  	isTheSameTables([1,2],[1,2]);
+
+	var friendsNames = ["Paweł","Wojtek","Kasia","Ania","Natalia","Alicja"]; 
+
+	for(i=0; i < friendsNames.length; i++){
+		$(".friendsNicknames").append("<p class=\"myFriends\">"+friendsNames[i]+"</p>").hide().fadeIn(2000);
+	}
+	$(".changeTitle").html("Moi przyjaciele");
+
+	$(".myFriends").append(" jest zajebisty/a!");
+
+
+	for(i = 0; i < 5; i++){
+		$(".fadeInOut").fadeOut(i * 1000).fadeIn(i * 1000);
+	}
+
+	$(".useDelay").fadeOut(2000).delay(5000).fadeIn(2000);
+
+	$(".useFadeTo").fadeTo(5000,0.5);
+
+	var counter = 1;
+	/*function komunikat(){
+		console.log(counter + " Madz");
+		counter++
+	};
+	setInterval(komunikat,5000);*/
+
+	var moveToLeft = 0;
+
+	var moveDiv = function(){
+		$(".moveToLeft").offset({left: moveToLeft});
+
+		moveToLeft++;
+		if(moveToLeft > 200){
+			moveToLeft = 0;
+		}
+	}
+	setInterval(moveDiv,15);
+
+	$("html").click(function(event){
+		$(".moveToClick").offset(
+		{
+			left:event.pageX,
+			top:event.pageY
+		});
+	});
+
+	var moveToRight = 0;
+	var moveToBottom = 0;
+	 moveToLeft = 200;
+	 moveToTop =200;
+
+
+	var moveDivInSquere = function(){
+	
+		$(".moveDivInSquere").offset({left: moveToRight, top:moveToBottom});
+
+		moveToRight++;
+		if(moveToRight > 200){
+			moveToRight = 200;
+				moveToBottom++;
+				if(moveToBottom > 200){
+					moveToLeft--;
+				
+					moveToBottom = 200;
+					moveToLeft--;
+					$(".moveDivInSquere").offset({left: moveToLeft, top:moveToBottom});
+						
+					if(moveToLeft < 0){
+						moveToLeft = 0;
+						moveToTop--;
+							$(".moveDivInSquere").offset({left: moveToLeft, top:moveToTop});
+						if(moveToTop < 0){
+							moveToLeft =0;
+							moveToTop = 0;
+							
+								$(".moveDivInSquere").offset({left: moveToLeft, top:moveToTop});
+							moveToRight =0; 
+							moveToBottom =0;
+							$(".moveDivInSquere").offset({left: moveToRight, top:moveToBottom});
+						}
+					}
+				}
+		};
+
+	
+		}
+	
+	setInterval(moveDivInSquere,15);
 });
