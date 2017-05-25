@@ -1,5 +1,5 @@
 #expression li:nth-child(2n+ 1){
-	color:red;
+	color:blue;
 }
 
 #not li:not([id*="not"]){ /* atrybut id zawiera slowo not */
