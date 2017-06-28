@@ -1,0 +1,13 @@
+header h1{
+	float: left;
+}
+header .messages{
+	float: right;
+}
+
+header .messages div p{
+	display: inline;
+}
+.clearfix{
+	clear: both;
+}

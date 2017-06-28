@@ -225,5 +225,24 @@ $(document).ready(function(){
 	
 		}
 	
-	setInterval(moveDivInSquere,15);
+	var squereInterval = setInterval(moveDivInSquere,15);
+
+	$("#stopAni").click(function(){
+		clearInterval(squereInterval);
+	});
+
+
+	var manyClicks = 0; 
+	$(".moveDivInSquere").click(function(){
+		manyClicks++;
+		clearInterval(squereInterval);
+		setInterval(moveDivInSquere,15 - manyClicks);
+
+		$(".moveDivInSquere").html(manyClicks);
+
+		if(manyClicks === 2){
+			$(".moveDivInSquere").html("Wygrałaś");
+		}
+		
+	});
 });
