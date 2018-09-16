@@ -128,12 +128,37 @@ $(document).ready( function(){
 		drawLine.moveTo(dots[0][0],dots[0],[1]);
 
 		for(i = 1; i < dots.length; i++){
-			console.log(dots[i][0]);
-		drawLine.lineTo(dots[i][0],dots[i][1]);
+			drawLine.lineTo(dots[i][0],dots[i][1]);
 		}
 		drawLine.fill();
 	}
 
 	conectDots(secret);
+
+	var $mouse = document.getElementById("draw-with-mouse");
+	var drawWithMouse = $mouse.getContext("2d");
+	
+
+	
+
+	var easyDraw = function(){
+		
+		$("#draw-with-mouse").mousemove(function (event){
+		
+			  var leftCords = event.pageX - $(this).offset().left,
+    		  topCords = event.pageY - $(this).offset().top;
+
+  
+ 			  var circle = new Path2D();
+              circle.arc(leftCords, topCords, 2, 0, 2 * Math.PI);
+              drawWithMouse.fill(circle);
+
+              //draw rectangles
+    		  //	drawWithMouse.fillRect(leftCords,topCords,1,1);
+	
+		});
+	};
+
+	easyDraw();
 	
 })
